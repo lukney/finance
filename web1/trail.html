@@ -1,0 +1,88 @@
+<html ng-app="products">
+
+    <meta charset="utf-8" />
+    <title> Highcharts directive demo </title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
+    <script type="text/javascript" src="https://code.highcharts.com/modules/exporting.js"></script>
+<body ng-controller="productCTRL">
+     <hc-pie-chart  data="newuser">Placeholder for pie chart</hc-pie-chart>
+<script>
+var app = angular.module('products', []);
+            // Directive for generic chart, pass in chart options
+
+            // Directive for pie charts, pass in title and data only    
+            .directive('hcPieChart', function () {
+                return {
+                    restrict: 'E',
+                    template: '<div></div>',
+                    scope: {
+                        title: '@',
+                        data: '='
+                    },
+                    link: function (scope, element) {
+                        Highcharts.chart(element[0], {
+                            chart: {
+                                type: 'pie'
+                            },
+                            title: {
+                                text: scope.title
+                            },
+                            plotOptions: {
+                                pie: {
+                                    allowPointSelect: true,
+                                    cursor: 'pointer',
+                                    dataLabels: {
+                                        enabled: true,
+                                        format: '{point.percentage:.1f} %'
+                                    }
+                                }
+                            },
+                            series: [{
+                                data: scope.data
+                            }]
+                        });
+                    }
+                };
+            })
+            //.controller('myController', function ($scope) {
+			app.controller('productCTRL', function ($scope, $http, $window) {
+			$scope.newuser = function () {   
+				   $http.get('/newuser', {
+						 						 
+					}).then(function (response) {
+						$scope.newuser= response.data.report;
+              
+                                                 })
+                                       };
+                
+                // Sample options for first chart
+               
+
+                // Sample data for pie chart
+               /*$scope.pieData = [{
+                      
+                        phone: 56.33
+                    }, {
+
+                       phone: 24.03,
+                        sliced: true,
+                        selected: true
+                    }, {
+                       phone: 10.38
+                    }, {
+
+                        phone: 4.77
+                    }, {
+                       
+                        y: 0.91
+                    }, {
+                        
+                        y: 0.2
+                }]*/
+            });
+</script>
+<script src="js/angular.min.js"></script>
+	  
+    </body>
+</html>

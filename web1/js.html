@@ -1,0 +1,50 @@
+<html>
+
+<body>
+<a href="#" onclick="myFun()">myFun</a>
+<a href="#" onclick="myFun1()">myFun1</a>
+<p id="p1" style="display:block">pagra1</p>
+<p id="p2" style="display:none">para2</p>
+<p id="p3" style="display:none">para3</p>
+	<script>
+function myFun() {
+    var x = document.getElementById("p2");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+		document.getElementById('p1').style.display = 'none';
+		document.getElementById('p3').style.display = 'none';
+		
+
+
+    } else {
+        x.style.display = "none";
+		document.getElementById('p2').style.display = 'none';
+		document.getElementById('p3').style.display = 'none';
+		
+	
+
+    }
+}
+
+function myFun1() {
+    var x = document.getElementById("p3");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+		document.getElementById('p1').style.display = 'none';
+		document.getElementById('p2').style.display = 'none';
+		
+
+
+    } else {
+        x.style.display = "none";
+		document.getElementById('p2').style.display = 'none';
+		document.getElementById('p1').style.display = 'none';
+		
+	
+
+    }
+}
+</script>
+</body>
+
+</html>

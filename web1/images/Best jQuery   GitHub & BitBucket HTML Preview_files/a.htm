@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><!-- base href="https://raw.githubusercontent.com/anishsana/fruitsGame/gh-pages/index.html" -->
+	 	<title>Fruits Game</title>
+	 	<meta charset="utf-8">
+	 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+	 	<link rel="stylesheet" href="a_data/styling.txt">
+	 	<link rel="stylesheet" href="a_data/jquery-ui.css">
+ 	</head>
+
+ 	<body>
+ 		<h1>Fruits Game</h1>
+		<p>Instructions: Click on Start Game to start slicing fruits by moving
+ the cursor. Each slice earns you a point whereas each miss costs you a 
+life. Good luck!</p>
+ 		<div id="container">
+	 		<div id="score">
+	 			Score: <span id="scorevalue">1</span>
+	 		</div>
+	 		<div id="trialsLeft" style="display: none;"><img src="a_data/heart.png" class="life"></div>
+	 		<div id="correct">
+	 			Correct
+	 		</div>
+	 		<div id="wrong">
+	 			Try again
+	 		</div>
+	 		<div id="fruitsContainer">
+	 			<img id="fruit1" class="fruit" style="display: none; left: 180px; top: 400px; visibility: visible;" src="a_data/mango.png">
+	 		</div>
+	 		<div id="instruction">
+	 			Slice the fruits
+	 		</div>
+	 		<div id="startreset">Start Game</div>
+	 		<div id="gameOver" style="display: block;"><p>Game Over!</p><p>Your score is 1</p></div>
+ 		</div>
+	 	<audio id="slicesound">
+	 		<source src="a_data/slicefruit.mp3">
+	 		<source src="a_data/slicefruit.oga">
+	 	</audio>
+	 	<script src="a_data/jquery.js"></script>
+	 	<script src="a_data/jquery-ui.js"></script>
+	 	<script type="text/htmlpreview" src="a_data/jquery.txt"></script>
+ 	<script src="a_data/htmlpreview.js"></script><script>HTMLPreview.replaceAssets();</script><script src="a_data/yql"></script><style>html {
+	height: 100%;
+	background: url(https://raw.githubusercontent.com/anishsana/fruitsGame/gh-pages/images/fruitsBackground.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+h1, p {
+	text-align: center;
+	font-family: cursive, sans-serif;
+	color: black;
+}
+
+#container{
+	height: 600px;
+	width: 750px;
+	background-color: #9DD2EA;
+	margin: 10px auto;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0px 4px 0px 0px #009de4;
+	-moz-box-shadow: 0px 4px 0px 0px #009de4;
+	-webkit-box-shadow: 0px 4px 0px 0px #009de4;
+ 	position: relative;
+}
+
+#score{
+	background-color: #F1FF92;
+	color: #888E5F;
+	padding: 11px;
+	position: absolute;
+	left: 700px;
+	box-shadow: 0px 4px 0px #9da853;
+	-moz-box-shadow: 0px 4px 0px #9da853;
+	-webkit-box-shadow: 0px 4px 0px #9da853;
+}
+
+#correct{
+ 	position: absolute;
+ 	left: 260px;
+ 	background-color: #42e252;
+ 	color: white;
+ 	padding: 11px;
+ 	display: none;
+}
+
+#wrong{
+	position: absolute;
+	left: 250px;
+	background-color: #de401a;
+	color: white;
+	padding: 11px;
+	display: none;
+}
+
+#fruitsContainer{
+	width: 650px;
+	height: 400px;
+	margin: 50px auto 10px auto;
+	background-color: white;
+	box-shadow: 0px 4px #535aa8;
+	-moz-box-shadow: 0px 4px #535aa8;
+	-webkit-box-shadow: 0px 4px #535aa8;
+	font-size: 100px;
+	text-align: center;
+	font-family: cursive, sans-serif;
+	color: black;
+	position: relative;
+	overflow: hidden;
+}
+
+#instruction{
+ 	width: 450px;
+ 	height: 50px;
+	background-color: #B481D9;
+	margin: 10px auto;
+	text-align: center;
+	line-height: 45px;
+	box-shadow: 0px 4px #8153a8;
+	-moz-box-shadow: 0px 4px #8153a8;
+	-webkit-box-shadow: 0px 4px #8153a8;
+}
+
+#choices{
+	width: 450px;
+	height: 100px;
+	margin: 5px auto;
+}
+
+.box{
+	width: 85px;
+	height: 85px;
+	background-color: white;
+	float: left;
+	margin-right: 36px;
+	border-radius: 3px;
+	cursor: pointer;
+	box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+	text-align: center;
+	line-height: 80px;
+	position: relative;
+	transition: all 0.2s;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+}
+
+.box:hover, #startreset:hover{
+	/* background-color: #9C89F6;*/
+	/* color: white;*/
+	/* box-shadow: 0px 4px #6b54d3;*/
+	/* -moz-box-shadow: 0px 4px #6b54d3;*/
+	/* -webkit-box-shadow: 0px 4px #6b54d3;*/
+}
+
+.box:active, #startreset:active{
+	background-color: #9C89F6;
+	color: white;
+	box-shadow: 0px 0px #6b54d3;
+	-moz-box-shadow: 0px 0px #6b54d3;
+	-webkit-box-shadow: 0px 0px #6b54d3;
+	top: 4px;
+}
+
+#box4{
+ 	margin-right: 0;
+}
+
+#startreset{
+	width: 78px;
+	padding: 10px;
+	background-color: rgba(255,255,255,0.5);
+	margin: 0 auto;
+	border-radius: 3px;
+	cursor: pointer;
+	box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+	text-align: center;
+	position: relative;
+	transition: all 0.2s;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+}
+
+#trialsLeft{
+	width: 80px;
+	padding: 10px;
+	position: absolute;
+	background-color: #F1FF92;
+	border-radius: 3px;
+	box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+	/* visibility: hidden;*/
+	display: none;
+}
+
+#gameOver{
+	height: 200px;
+	width: 500px;
+	background: linear-gradient(#F3CA6B, #F3706C);
+	background: -webkit-linear-gradient(#F3CA6B, #F3706C);
+	background: -o-linear-gradient(#F3CA6B, #F3706C);
+	background: -moz-linear-gradient(#F3CA6B, #F3706C);
+	color: white;
+	font-size: 2.5em;
+	text-align: center;
+	text-transform: uppercase;
+	position: absolute;
+	top: 170px;
+	left: 145px;
+	z-index: 2;
+	display: none;
+}
+
+.life{
+	width: 16px;
+	height: 16px;
+	margin: 0 5px;
+}
+
+.fruit{
+ 	display: none;
+ 	position: absolute;
+}</style><script src="a_data/jquery.js"></script><script src="a_data/jquery-ui.js"></script><script src="a_data/yql_002"></script><script>var playing = false;
+var score;
+var trialsLeft;
+var step;
+var action;
+var fruits = ['apple', 'banana', 'cherries', 'grapes',
+'mango', 'orange', 'peach', 'pear', 'watermelon'];
+$(function(){
+	$("#startreset").click(function(){
+ 		if(playing == true){
+ 			location.reload();
+ 		}else{
+ 			playing = true;
+ 			score = 0;
+ 			$("#scorevalue").html(score);
+ 			$("#trialsLeft").show();
+ 			trialsLeft = 3;
+ 			addHearts();
+ 			$("#gameOver").hide();
+ 			$("#startreset").html("Reset Game");
+ 			startAction();
+ 		}
+	});
+
+	$("#fruit1").mouseover(function(){
+ 	score++;
+ 	$("#scorevalue").html(score);
+ 	$("#slicesound")[0].play();
+ 	clearInterval(action);
+ 	$("#fruit1").hide("explode", 500);
+ 	setTimeout(startAction, 500);
+});
+
+	function addHearts(){
+	 	$("#trialsLeft").empty();
+	 	for(i = 0; i < trialsLeft; i++){
+	 		$("#trialsLeft").append('<img src="images/heart.png" class="life">');
+	 	}
+	}
+
+	function startAction(){
+	 	$("#fruit1").show();
+	 	chooseFruit();
+	 	$("#fruit1").css({
+	 		'left' : Math.round(550*Math.random()), 
+	 		'top' : -50
+	 	});
+
+	 	step = 1+ Math.round(5*Math.random()); 
+	 	action = setInterval(function(){
+	 		$("#fruit1").css('top',
+			$("#fruit1").position().top + step);
+			if($("#fruit1").position().top > $("#fruitsContainer").height()){
+	 			if(trialsLeft > 1 ){
+	 				$("#fruit1").show();
+	 				chooseFruit();
+	 				$("#fruit1").css({
+	 					'left' : Math.round(550*Math.random()), 
+	 					'top' : -50
+	 				});
+	 			step = 1+ Math.round(5*Math.random());
+	 			trialsLeft --;
+	 			addHearts();
+				}else{
+	 				playing = false;
+	 				$("#startreset").html("Start Game");
+	 				$("#gameOver").show();
+	 				$("#gameOver").html('<p>Game Over!</p><p>Your score is '+ score +'</p>');
+	 				$("#trialsLeft").hide();
+	 				stopAction();
+	 			}
+	 		}
+	 	}, 10);
+	}
+
+	function chooseFruit(){
+	 	$("#fruit1").attr('src' , 'images/' +
+		fruits[Math.round(8*Math.random())] +'.png');
+	}
+
+	function stopAction(){
+ 		clearInterval(action);
+ 		$("#fruit1").hide();
+	}
+});</script>
+</body></html>

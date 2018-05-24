@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Socket.io</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src = "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script>
+    $(document).ready(function(){
+          var socket = io();
+          $("#add_status").click(function(){
+            socket.emit('status added',$("#comment").val());
+          });
+
+          socket.on('new status',function(msg){
+              var count = $('#count_status').text();
+              var valCount = parseInt(count);
+              if(valCount>=1) {
+                  valCount = valCount+1;
+              } else {
+                  valCount = 1;
+              }
+              var showMsg = '<div id="count_status"> '+valCount+' </div>  new status';
+              $("#show_comments").html(showMsg);
+
+          });
+    });
+    </script>
+	<script src="bootstrap-4.0.0-dist\css\bootstrap.min.css"></script>
+  </head>
+  <body>
+    <div id="comment_box" style = "padding:5%;">
+      <textarea id="comment" rows="5" cols="70"></textarea><br /><br />
+      <input type="button" id="add_status" value="Add">
+    </div>
+      <div id= "show_comments"  class = "jumbotron"></div>
+  </body>
+</html>

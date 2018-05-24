@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+    <div id="chart" style="width:900px; height:500px;"></div> 
+	<script>
+    // VISUALIZATION API AND THE PIE CHART PACKAGE.
+    google.charts.load("visualization", "1", { packages: ["corechart"] });
+    google.charts.setOnLoadCallback(DrawPieChart);
+
+    function DrawPieChart() {
+        // DEFINE AN ARRAY OF DATA.
+        var arrSales =
+        [
+            ['Month', 'Sales Figure'],
+            ['JAN', 21],
+            ['FEB', 56],
+            ['MAR', 14],
+            ['APR', 61],
+            ['MAY', 45]
+        ];
+
+        // SET CHART OPTIONS.
+        var options = {
+            title: 'Monthly Sales',
+            is3D: true,
+            pieSliceText: 'value-and-percentage'
+        };
+
+        var figures = google.visualization.arrayToDataTable(arrSales);
+
+        // WHERE TO SHOW THE CHART (DIV ELEMENT).
+        var chart = new google.visualization.PieChart(document.getElementById('chart'));
+
+        // DRAW THE CHART.
+        chart.draw(figures, options);
+    }
+</script>
+</body>
+</html>

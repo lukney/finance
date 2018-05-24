@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="angularApp">
+  <head>
+    <meta charset="utf-8">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+  </head>
+  <body>
+    <section>
+      <div class="container">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Wall</h3>
+                </div>
+                <div class="panel-body">
+                  <div ng-controller="wallPosts">
+                   <div class="panel panel-default post" ng-repeat="post in posts">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-sm-3">
+        <canvas class="chart chart-pie" 
+            chart-data="post.data"
+            chart-labels="labels"
+            chart-options="options"
+        ></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- col-md-8 end -->
+          </div>
+      </div>
+    </section>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Bootstrap core JavaScript-->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/jsLib/bootstrap.js"></script>
+    <script src="/jsLib/angular.min.js"></script>
+    <script src="angularApp.js"></script>
+<script src="angular_chart_source_code/angular_chart_source_code/assets/Chart.js"></script>
+<script src="angular_chart_source_code/angular_chart_source_code/assets/angular-chart.js"></script>		
+    <script src="/jsLib/chart.js/dist/Chart.min.js"></script>
+    <script src="/jsLib/angular-chart.js/dist/angular-chart.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    </script>
+  </body>
+</html>

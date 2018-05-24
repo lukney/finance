@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+
+<div ng-app="products">
+		  <div ng-controller="productCTRL">
+
+First Name: <input type="text" ng-model="firstName"><br>
+Last Name: <input type="text" ng-model="lastName"><br>
+<br>
+Full Name: {{firstName + " " + lastName}}
+<button ng-click="newuser">newuser</button>
+<div>
+									 <table id="customers">
+									  <tr>
+										<th>Date</th>		
+										<th>Account Number</th>
+										<th>Lent Amount</th>
+										<th>Interest</th>
+										<th>Earned Amount</th>
+										<th>Balance</th>
+										<th>Received Amount</th>
+									  </tr>
+									  <tr ng-repeat="x in newuser">
+										<td>{{x.firstname}}</td>
+
+										
+									  </tr>
+									  
+									</table>
+</div>
+</div>
+</div>
+<script>
+var app = angular.module('products', []);
+app.controller('productCTRL', function ($scope, $http, $window) {
+   $scope.newuser = function () {   
+				   $http.get('/newuser', {
+						 						 
+					}).then(function (response) {
+						$scope.newuser= response.data.report;
+              
+            })
+};
+});
+</script>
+
+</body>
+</html>

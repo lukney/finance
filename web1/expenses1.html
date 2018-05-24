@@ -1,0 +1,1285 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Pooled Admin Panel Category Flat Bootstrap Responsive Web Template | Validation :: w3layouts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Pooled Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Bootstrap Core CSS -->
+<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<!-- Custom CSS -->
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<link rel="stylesheet" href="css/morris.css" type="text/css"/>
+<!-- Graph CSS -->
+<link href="css/font-awesome.css" rel="stylesheet"> 
+<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.1.221/styles/kendo.common-material.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.1.221/styles/kendo.material.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.1.221/styles/kendo.material.mobile.min.css" />
+
+    <script src="https://kendo.cdn.telerik.com/2018.1.221/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2018.1.221/js/kendo.all.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.js"></script>
+<script src="https://rawgithub.com/rendro/easy-pie-chart/master/dist/angular.easypiechart.js"></script>
+<style>
+.chart {
+  position: relative;
+  display: inline-block;
+  width: 110px;
+  height: 110px;
+  margin-top: 50px;
+   margin-left: 180px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+.chart canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.percent {
+  display: inline-block;
+  line-height: 110px;
+  z-index: 2;
+}
+.percent:after {
+  content: '%';
+  margin-left: 0.1em;
+  font-size: .8em;
+}
+.angular {
+  margin-top: 100px;
+}
+.angular .chart {
+  margin-top: 0;
+}
+
+</style>
+   
+<style>
+.card {
+border : 10px  #1B93E1 solid;
+}
+.card1 {
+border : 10px;
+}
+</style>
+   <style>
+* {
+    box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 100px;
+	height:100px;
+    padding: 10px;
+    margin-right:8px;
+    
+	 margin-top:15px;
+
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/* Style the buttons */
+
+.btn:hover {
+    background-color: #ddd;
+}
+
+
+</style>
+<!-- jQuery -->
+<script src="js/jquery-2.1.4.min.js"></script>
+<!-- //jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+<link href='//fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css'/>
+<link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<!-- lined-icons -->
+<link rel="stylesheet" href="css/icon-font.min.css" type='text/css' />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- //lined-icons -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head> 
+<body>
+<div ng-app="app">
+		  <div   ng-controller="chartCtrl">
+	
+   <div class="page-container">
+   <!--/content-inner-->
+<div class="left-content">
+	   <div class="mother-grid-inner">
+               <!--header start here-->
+				<div class="header-main">
+					<div class="logo-w3-agile">
+								<h4><a href="#" onclick="home()">Finance Matic</a></h4>
+							</div>
+					<div class="w3layouts-left">
+							
+							<!--search-box-->
+								<div class="w3-search-box">
+									<form action="#" method="post">
+										<input type="text" placeholder="Search..." required="">	
+										<input type="submit" value="">					
+									</form>
+								</div><!--//end-search-box-->
+							<div class="clearfix"> </div>
+						 </div>
+						 <div class="w3layouts-right">
+							<div class="profile_details_left"><!--notifications of menu start -->
+								<ul class="nofitications-dropdown">
+									<li class="dropdown head-dpdn">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-envelope"></i><span class="badge">3</span></a>
+										<ul class="dropdown-menu">
+											<li>
+												<div class="notification_header">
+													<h3>You have 3 new messages</h3>
+												</div>
+											</li>
+											<li><a href="#">
+											   <div class="user_img"><img src="images/in11.jpg" alt=""></div>
+											   <div class="notification_desc">
+												<p>Lorem ipsum dolor</p>
+												<p><span>1 hour ago</span></p>
+												</div>
+											   <div class="clearfix"></div>	
+											</a></li>
+											<li class="odd"><a href="#">
+												<div class="user_img"><img src="images/in10.jpg" alt=""></div>
+											   <div class="notification_desc">
+												<p>Lorem ipsum dolor </p>
+												<p><span>1 hour ago</span></p>
+												</div>
+											  <div class="clearfix"></div>	
+											</a></li>
+											<li><a href="#">
+											   <div class="user_img"><img src="images/in9.jpg" alt=""></div>
+											   <div class="notification_desc">
+												<p>Lorem ipsum dolor</p>
+												<p><span>1 hour ago</span></p>
+												</div>
+											   <div class="clearfix"></div>	
+											</a></li>
+											<li>
+												<div class="notification_bottom">
+													<a href="#">See all messages</a>
+												</div> 
+											</li>
+										</ul>
+									</li>
+									<li class="dropdown head-dpdn">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-bell"></i><span class="badge blue">3</span></a>
+										<ul class="dropdown-menu">
+											<li>
+												<div class="notification_header">
+													<h3>You have 3 new notification</h3>
+												</div>
+											</li>
+											<li><a href="#">
+												<div class="user_img"><img src="images/in8.jpg" alt=""></div>
+											   <div class="notification_desc">
+												<p>Lorem ipsum dolor</p>
+												<p><span>1 hour ago</span></p>
+												</div>
+											  <div class="clearfix"></div>	
+											 </a></li>
+											 <li class="odd"><a href="#">
+												<div class="user_img"><img src="images/in6.jpg" alt=""></div>
+											   <div class="notification_desc">
+												<p>Lorem ipsum dolor</p>
+												<p><span>1 hour ago</span></p>
+												</div>
+											   <div class="clearfix"></div>	
+											 </a></li>
+											 <li><a href="#">
+												<div class="user_img"><img src="images/in7.jpg" alt=""></div>
+											   <div class="notification_desc">
+												<p>Lorem ipsum dolor</p>
+												<p><span>1 hour ago</span></p>
+												</div>
+											   <div class="clearfix"></div>	
+											 </a></li>
+											 <li>
+												<div class="notification_bottom">
+													<a href="#">See all notifications</a>
+												</div> 
+											</li>
+										</ul>
+									</li>	
+									<li class="dropdown head-dpdn">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-tasks"></i><span class="badge blue1">9</span></a>
+										<ul class="dropdown-menu">
+											<li>
+												<div class="notification_header">
+													<h3>You have 8 pending task</h3>
+												</div>
+											</li>
+											<li><a href="#">
+												<div class="task-info">
+													<span class="task-desc">Database update</span><span class="percentage">40%</span>
+													<div class="clearfix"></div>	
+												</div>
+												<div class="progress progress-striped active">
+													<div class="bar yellow" style="width:40%;"></div>
+												</div>
+											</a></li>
+											<li><a href="#">
+												<div class="task-info">
+													<span class="task-desc">Dashboard done</span><span class="percentage">90%</span>
+												   <div class="clearfix"></div>	
+												</div>
+												<div class="progress progress-striped active">
+													 <div class="bar green" style="width:90%;"></div>
+												</div>
+											</a></li>
+											<li><a href="#">
+												<div class="task-info">
+													<span class="task-desc">Mobile App</span><span class="percentage">33%</span>
+													<div class="clearfix"></div>	
+												</div>
+											   <div class="progress progress-striped active">
+													 <div class="bar red" style="width: 33%;"></div>
+												</div>
+											</a></li>
+											<li><a href="#">
+												<div class="task-info">
+													<span class="task-desc">Issues fixed</span><span class="percentage">80%</span>
+												   <div class="clearfix"></div>	
+												</div>
+												<div class="progress progress-striped active">
+													 <div class="bar  blue" style="width: 80%;"></div>
+												</div>
+											</a></li>
+											<li>
+												<div class="notification_bottom">
+													<a href="#">See all pending tasks</a>
+												</div> 
+											</li>
+										</ul>
+									</li>	
+									<div class="clearfix"> </div>
+								</ul>
+								<div class="clearfix"> </div>
+							</div>
+							<!--notification menu end -->
+							
+							<div class="clearfix"> </div>				
+						</div>
+						<div class="profile_details w3l">		
+								<ul>
+									<li class="dropdown profile_details_drop">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+											<div>	
+												
+												<div class="user-name">
+													
+												</div>
+												<i class="fa fa-angle-down"></i>
+												<i class="fa fa-angle-up"></i>
+												<div class="clearfix"></div>	
+											</div>	
+										</a>
+										<ul class="dropdown-menu drp-mnu">
+											<li> <a href="#"><i class="fa fa-cog"></i> Settings</a> </li> 
+								
+											<li> <a href="" ng-click="logout()"><i class="fa fa-sign-out"></i> Logout</a> </li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+							
+				     <div class="clearfix"> </div>	
+				</div>
+<!--heder end here-->
+<div id="p1" style="display:block">
+<ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="main-page1.html">Home</a><i class="fa fa-angle-right"></i>Customer List&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="expenditure.html"><button class="btn  btn-primary" style="width:160px;">Add Expenses</button></a></li>
+            </ol>
+<!--grid-->
+ 	<div class="inbox-mail">
+	<div class="col-md-6 compose w3layouts">
+		
+            <h2>Balance</h2>
+   <div class="card" ng-repeat="pie in pie"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Customer Expenditure Chart&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<!--div>received amount:{{pie.RAmount}}</div--><!--div>loan amount:{{pie.LAmount}}</div-->
+   <div class="chart" easypiechart options="options" percent="(100*pie.RAmount/pie.LAmount)| number:0">
+	<span class="percent"  ng-bind="(100*pie.RAmount/pie.LAmount)| number:0"></span>
+    </div>
+	
+</div>
+	
+<div class="w3-card-4 w3-margin" style="width:90%;height:50%">
+<div style="margin-left:90px;">
+<div class="row">
+  <div class="column" style="background-color:#ddd; border-radius:20px;" ng-repeat="r in Room_Rent[0]">
+    <h6 style="font-size:15px;" onclick="roomrent()">Room Rent<br><i class="fa fa-home"  style="color:blue;font-size:25px; margin-top:5px; margin-left:25px;"></i></h6>
+<p style="margin-left:8px;"><i class="fa fa-rupee"></i>{{r.Room_Rents}}</p>
+  </div>
+  <div class="column" style="background-color:#ddd; border-radius:20px;" ng-repeat="l in light_bill[0]">
+  <h6 style="font-size:15px;margin-left:8px;"   onclick="lightbill()">Light Bill<br><i class="fa fa-lightbulb-o" aria-hidden="true" style="color:#A324B3;font-size:30px; margin-top:5px; margin-left:22px;"></i></h6>
+<p style="margin-left:8px; margin-top:-5px;"><i class="fa fa-rupee"></i>{{l.Light_Bills}}</p>
+  </div>
+   <div class="column" style="background-color:#ddd; border-radius:20px;" ng-repeat="m in mobile_bill[0]">
+<h6 style="font-size:15px;margin-left:8px;"  onclick="mobile()">Mobile Bill<br><i class="fa fa-mobile"  style="color:pink;font-size:32px; margin-top:5px; margin-left:23px;"></i></h6>
+<p style="margin-left:8px;margin-top:-8px;"><i class="fa fa-rupee"></i>{{m.Mobile_Bills}}</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#ddd;border-radius:20px; margin-bottom:15px;" ng-repeat="p in payment[0]">
+   <h6 style="font-size:12px;"  onclick="salary()">Paid Salaries<br><img src="images/if_misc-_wallet_1276842.png"  style="width:23px;height:23px;margin-left:25px;margin-top:2px;"></h6>
+<p style="margin-left:8px;"><i class="fa fa-rupee"></i>{{p.Payments}}</p>
+   </div>
+  <div class="column" style="background-color:#ddd;border-radius:20px; margin-bottom:15px;" ng-repeat="f in Petrol[0]">
+   <h6 style="font-size:13px; margin-left:20px;" onclick="fuel()">Fuel<br><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARmSURBVGhD7ZltbBRFGMerqIl80OgnExNf+KCJfuSLH0waub0XZrct3Mxy0japIh60hpZGSmkpLaS8mDQGxGBSsCFFKpEaiTFRWqi0AorV0mARI9gIpWBUTEmFgAE6zrP7zLbX26u320vZM/tP/sntzM78n19nJ7vbzfHly5ev/68URX84oEbnTNfhcOyp3Nzc+3DatNXQ0HCvqhY+gofOBeGKyj5TCL0dVBnPiAkbUVTaOHdu/H6MmVKaps0W53eJsbcUjQawOX0F89jTAuL3pEIyZIWwAyLmHjPNXgARJLRbjgkQWoBd6UusQjsMDucv5kvrd/DK7Z/wyncPTMvlW/fzWGmtBTNVYeZKsC/luQK8HrvSl67rD4hJbsIES2rf4XVtX1uuae3hq5q/SNtVzQf52g+Ojc+x9zjPL4ybMIS2YmSCzJVghyVEUKXrscuZ5qnscTlJ+daPjAJWv3+I60tXiTYdJ0/fsKol1U0GBMxVVL7B7CPsCEZaQohD1njCNmGXcyma/oScqGJbuxGux6utwtx6+cZdxlzFKxvNNkKPYqQh3NidE8dALdjtXJNB4NII5ceM450te3hf/ylHrnjT3Bcvl61NCfICYw+KfdAhc6UzClKz+4g18YnePu5U23fsNMbq8aqUILAPZEbNuo1WXvaBEPoetJVVrOYDP/5k5WUtSGVVnQ+SJB8khRyDnD5j5WUdiEL0NdBGFizmseLXMY/ecPO0bGkySO2eHh7UzDt691fHsbz0taVpmzF2kbippgLJJfpj4i5+Reai38Jud5oMAuH5hcuM4/kFMb4wVpK+F5VYhb265u2UIKCXSPRJATMKfYrG2kXTlE/H/yk7kArx5BpZWGQV5dQFxW/w2tbuBBDxONIfDrNn4cUJo2GvXDD6xKWGTe5lBwKubjnMSzfv5vENzY68oqkt4Qk4WlKeAClW4Ww4jz4P2TMCkinTJSsTQUyfhOysAhnfI9HvAiorlVmhEHs0S0HoUZH1oswycn0QG7kB2fxxL9/U3mvbN9meBVknfO7yCP/50ojx2+6cifYsSGf/BbyHc37w5HnbcybakyC7Ogf4nbExxOD89p0x3twxYHuutOdAYE9cvf4PIoxr5NpN3rj/W9sxYM+BdJ8extKTBZeb3Riw50CG/hzFspP1y29XbceAPQcyfOVvLDtZg9kE0vXDEJadrM/7frUdA/YcyPp9J/jwX8mrcv6PUV7/4Te2Y8CeAwEDTNepIX5RXGawZzrEJm/YlxoC7EkQN54IAu8hMku8l9QphF2H3yFVj2M57jWTILquzwqq9IzMA4s3x2vw2ovluNdMgkBeYH7sGUVlPaLtlgGl0ZBRyHQ10yBSsDr4073mRdhzYkm/F9fpoNxwYJW9wvNir2XUkQWFJojKbph5bFAhdK8oY3r/NQEpGl0ui78bhi/HkUjRQ1iOe8GHFvGXKRMTVpuOtgQIbRs/zpzhW4iY+9OASrdY7Wo0jKX48nX3lZPzL3o1h8H+GMXOAAAAAElFTkSuQmCC"  style="width:30px;height:30px;margin-left:-2px;"></h6>
+<p style="margin-left:8px;"><i class="fa fa-rupee"></i>{{f.Petrols}}</p>
+  </div>
+   <div class="column" style="background-color:#ddd;border-radius:20px; margin-bottom:15px;" ng-repeat="o in Others[0]">
+  <h6 style="font-size:15px; margin-left:19px;"  onclick="others()">Others<br><i class="fa fa-list"  style="color:blue;font-size:18px; margin-top:5px; margin-left:13px;"></i></h6>
+<p style="margin-left:12px;"><i class="fa fa-rupee"></i>{{o.Otherss}}</p>
+   </div>
+</div>
+
+<script>
+// Get the elements with class="column"
+var elements = document.getElementsByClassName("column");
+
+// Declare a loop variable
+var i;
+
+// List View
+function listView() {
+    for (i = 0; i < elements.length; i++) {
+        elements[i].style.width = "100%";
+    }
+}
+
+// Grid View
+function gridView() {
+    for (i = 0; i < elements.length; i++) {
+        elements[i].style.width = "50%";
+    }
+}
+
+/* Optional: Add active class to the current button (highlight it) */
+var container = document.getElementById("btnContainer");
+var btns = container.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>		
+</div>
+</div>		
+</div>
+<!-- tab content -->
+<div class="col-md-6 tab-content tab-content-in w3">
+<div class="tab-pane text-style active" id="tab1">
+   <div id="roomrent" style="display:block;">
+   <div class="inbox-right" style="border : 10px  #1B93E1 solid;">
+  	    <h4>RoomRent</h4>
+            <table class="table">
+					<tbody>
+						<tr class="table-row" ng-repeat="r in Room_Rent[1]">
+						<td colspan="2"> 	
+						   <p><i class="fa fa-calendar"></i>&nbsp;&nbsp;<b style="color:#333;">{{r.date | date:'MM/dd/yyyy    h:mma'}} </b> </p> 
+						</td>
+						<td colspan="2"> 	
+						   <p><i class="fa fa-rupee"></i>&nbsp;<b style="color:#333;">{{r.Room_Rent}}</b></p> 
+						   <p>Recevied on this week sun</p>
+						</td>
+						<td> 
+						<div><h6 style="font-size:12px;"><i class="fa fa-home"  style="color:blue;font-size:25px; margin-top:-13px; margin-left:17px;"></i><br>Room Rent</h6>
+						</div>
+						</td>
+						</tr>
+						
+					</tbody>
+            </table>
+    </div>
+	</div>
+	<div id="lightbill" style="display:none;">
+	   <div class="inbox-right" style="border : 10px  #1B93E1 solid;">
+  	    <h4>Light Bill</h4>
+            <table class="table">
+					<tbody>
+						<tr class="table-row" ng-repeat="l in light_bill[1]">
+						<td colspan="2"> 	
+						   <p><i class="fa fa-calendar"></i>&nbsp;&nbsp;<b style="color:#333;"> {{l.date| date:'MM/dd/yyyy    h:mma'}}</b> </p> 
+						</td>
+						<td colspan="2"> 	
+						   <p><i class="fa fa-rupee"></i>&nbsp;<b style="color:#333;">{{l.Light_Bill}}</b></p> 
+						   <p>Recevied on this week sun</p>
+						</td>
+						<td> 
+						<div><h6 style="font-size:12px;"><i class="fa fa-lightbulb-o" aria-hidden="true" style="color:#A324B3;font-size:28px; margin-top:-13px; margin-left:17px;"></i><br>Light Bill</h6>
+						</div>
+						</td>
+						</tr>
+						
+					</tbody>
+            </table>
+    </div>
+	</div>
+	<div id="mobile" style="display:none;">
+       <div class="inbox-right" style="border : 10px  #1B93E1 solid;">
+  	    <h4>Mobile</h4>
+            <table class="table">
+					<tbody>
+						<tr class="table-row" ng-repeat="m in mobile_bill[1]">
+						<td colspan="2"> 	
+						   <p><i class="fa fa-calendar"></i>&nbsp;&nbsp;<b style="color:#333;">{{m.date| date:'MM/dd/yyyy    h:mma'}}</b> </p> 
+						</td>
+						<td colspan="2"> 	
+						   <p><i class="fa fa-rupee"></i>&nbsp;<b style="color:#333;">{{m.Mobile_Bill}}</b></p> 
+						   <p>Recevied on this week sun</p>
+						</td>
+						<td> 
+						<div><h6 style="font-size:12px;"><i class="fa fa-mobile"  style="color:pink;font-size:32px; margin-top:-13px; margin-left:23px;"></i><br>Mobile Bill</h6>
+						</div>
+						</td>
+						</tr>
+						
+					</tbody>
+            </table>
+    </div>
+	</div>
+	<div id="salary" style="display:none;">
+       <div class="inbox-right" style="border : 10px  #1B93E1 solid;">
+  	    <h4>Paid Salaries</h4>
+            <table class="table">
+					<tbody>
+						<tr class="table-row" ng-repeat="p in payment[1]">
+						<td colspan="2"> 	
+						   <p><i class="fa fa-calendar"></i><b style="color:#333;"> {{p.date| date:'MM/dd/yyyy    h:mma'}}</b> </p> 
+						</td>
+						<td colspan="2"> 	
+						   <p><i class="fa fa-rupee"></i>&nbsp;<b style="color:#333;">{{p.Payment}}</b></p> 
+						   <p>Recevied on this week sun</p>
+						</td>
+						<td> 
+						<div><h6 style="font-size:12px;"><img src="images/if_misc-_wallet_1276842.png"  style="width:23px;height:23px;margin-left:17px;margin-top:-13px;"><br>Paid Salaries</h6>
+						</div>
+						</td>
+						</tr>
+						
+					</tbody>
+            </table>
+    </div>
+	</div>
+	<div id="fuel" style="display:none;">
+       <div class="inbox-right" style="border : 10px  #1B93E1 solid;">
+  	    <h4>Fuel</h4>
+            <table class="table">
+					<tbody>
+						<tr class="table-row" ng-repeat="f in Petrol[1]">
+						<td colspan="2"> 	
+						   <p><i class="fa fa-calendar"></i>&nbsp;&nbsp;<b style="color:#333;"> {{f.date| date:'MM/dd/yyyy    h:mma'}}</b> </p> 
+						</td>
+						<td colspan="2"> 	
+						   <p><i class="fa fa-rupee"></i>&nbsp;<b style="color:#333;">{{f.Petrol}}</b></p> 
+						   <p>Recevied on this week sun</p>
+						</td>
+						<td> 
+						<div><h6 style="font-size:12px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARmSURBVGhD7ZltbBRFGMerqIl80OgnExNf+KCJfuSLH0waub0XZrct3Mxy0japIh60hpZGSmkpLaS8mDQGxGBSsCFFKpEaiTFRWqi0AorV0mARI9gIpWBUTEmFgAE6zrP7zLbX26u320vZM/tP/sntzM78n19nJ7vbzfHly5ev/68URX84oEbnTNfhcOyp3Nzc+3DatNXQ0HCvqhY+gofOBeGKyj5TCL0dVBnPiAkbUVTaOHdu/H6MmVKaps0W53eJsbcUjQawOX0F89jTAuL3pEIyZIWwAyLmHjPNXgARJLRbjgkQWoBd6UusQjsMDucv5kvrd/DK7Z/wyncPTMvlW/fzWGmtBTNVYeZKsC/luQK8HrvSl67rD4hJbsIES2rf4XVtX1uuae3hq5q/SNtVzQf52g+Ojc+x9zjPL4ybMIS2YmSCzJVghyVEUKXrscuZ5qnscTlJ+daPjAJWv3+I60tXiTYdJ0/fsKol1U0GBMxVVL7B7CPsCEZaQohD1njCNmGXcyma/oScqGJbuxGux6utwtx6+cZdxlzFKxvNNkKPYqQh3NidE8dALdjtXJNB4NII5ceM450te3hf/ylHrnjT3Bcvl61NCfICYw+KfdAhc6UzClKz+4g18YnePu5U23fsNMbq8aqUILAPZEbNuo1WXvaBEPoetJVVrOYDP/5k5WUtSGVVnQ+SJB8khRyDnD5j5WUdiEL0NdBGFizmseLXMY/ecPO0bGkySO2eHh7UzDt691fHsbz0taVpmzF2kbippgLJJfpj4i5+Reai38Jud5oMAuH5hcuM4/kFMb4wVpK+F5VYhb265u2UIKCXSPRJATMKfYrG2kXTlE/H/yk7kArx5BpZWGQV5dQFxW/w2tbuBBDxONIfDrNn4cUJo2GvXDD6xKWGTe5lBwKubjnMSzfv5vENzY68oqkt4Qk4WlKeAClW4Ww4jz4P2TMCkinTJSsTQUyfhOysAhnfI9HvAiorlVmhEHs0S0HoUZH1oswycn0QG7kB2fxxL9/U3mvbN9meBVknfO7yCP/50ojx2+6cifYsSGf/BbyHc37w5HnbcybakyC7Ogf4nbExxOD89p0x3twxYHuutOdAYE9cvf4PIoxr5NpN3rj/W9sxYM+BdJ8extKTBZeb3Riw50CG/hzFspP1y29XbceAPQcyfOVvLDtZg9kE0vXDEJadrM/7frUdA/YcyPp9J/jwX8mrcv6PUV7/4Te2Y8CeAwEDTNepIX5RXGawZzrEJm/YlxoC7EkQN54IAu8hMku8l9QphF2H3yFVj2M57jWTILquzwqq9IzMA4s3x2vw2ovluNdMgkBeYH7sGUVlPaLtlgGl0ZBRyHQ10yBSsDr4073mRdhzYkm/F9fpoNxwYJW9wvNir2XUkQWFJojKbph5bFAhdK8oY3r/NQEpGl0ui78bhi/HkUjRQ1iOe8GHFvGXKRMTVpuOtgQIbRs/zpzhW4iY+9OASrdY7Wo0jKX48nX3lZPzL3o1h8H+GMXOAAAAAElFTkSuQmCC"  style="width:30px;height:30px;margin-left:-2px;margin-top:-13px;"><br>Fuel</h6>
+						</div>
+						</td>
+						</tr>
+					</tbody>
+            </table>
+    </div>
+	</div>
+	<div id="others" style="display:none;">
+       <div class="inbox-right" style="border : 10px  #1B93E1 solid;">
+  	    <h4>Others</h4>
+            <table class="table">
+					<tbody>
+						<tr class="table-row" ng-repeat="o in Others[1]">
+						<td colspan="2"> 	
+						   <p><i class="fa fa-calendar"></i>&nbsp;&nbsp;<b style="color:#333;"> {{o.date| date:'MM/dd/yyyy    h:mma'}}</b> </p> 
+						</td>
+						<td colspan="2"> 	
+						   <p><i class="fa fa-rupee"></i>&nbsp;<b style="color:#333;">{{o.Others}}</b></p> 
+						   <p>Recevied on this week sun</p>
+						</td>
+						<td> 
+						<div><h6 style="font-size:12px;"><i class="fa fa-list"  style="color:blue;font-size:18px; margin-top:-13px; margin-left:13px;"></i><br>Others</h6>
+						</div>
+						</td>
+						</tr>
+						
+					</tbody>
+            </table>
+    </div>
+    </div>	
+
+			   
+            <br/>
+
+</div><br/><br/><br/>
+			<div class="inner-block">
+
+</div>
+</div>
+</div>
+
+
+<!--inner block end here-->
+<!--copy rights start here-->
+<div  class="copyrights">
+	 <p>© 2016 Pooled . All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+</div>
+
+<div class="clearfix"> </div>
+   </div>
+
+</div>
+</div>
+</div>
+
+ 	<!--//grid-->
+
+<!-- script-for sticky-nav -->
+		<script>
+		$(document).ready(function() {
+			 var navoffeset=$(".header-main").offset().top;
+			 $(window).scroll(function(){
+				var scrollpos=$(window).scrollTop(); 
+				if(scrollpos >=navoffeset){
+					$(".header-main").addClass("fixed");
+				}else{
+					$(".header-main").removeClass("fixed");
+				}
+			 });
+			 
+		});
+		</script>
+		<!-- /script-for sticky-nav -->
+<!--inner block start here-->
+
+<!--COPY rights end here-->
+</div>
+</div>
+  <!--//content-inner-->
+			<!--/sidebar-menu-->
+				<div class="sidebar-menu">
+					<header class="logo1">
+						<a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> 
+					</header>
+						<div style="border-top:1px ridge rgba(255, 255, 255, 0.15)"></div>
+                           <div class="menu">
+									<ul id="menu" >
+											<li><a href="main-page1.html"><i class="fa fa-tachometer"></i> <span>Dashboard</span><div class="clearfix"></div></a></li>
+										
+										
+										  <li id="menu-academico" ><a href="report3.html"><i class="material-icons" >report</i><span>Report</span><div class="clearfix"></div></a></li>
+									<li><a href="try1.html"><i class="fa fa-address-book" ></i><span>New User</span><div class="clearfix"></div></a></li>
+									<li id="menu-academico" ><a href="expenses1.html"><i class="material-icons" >money</i><span>expediture</span><div class="clearfix"></div></a></li>
+									 <li id="menu-academico" ><a href="customer1.html"><i class="material-icons" >list</i><span>Customer List</span><div class="clearfix"></div></a>
+										   
+										</li>
+									
+									
+									
+								  </ul>
+								</div>
+							  </div>
+							  <div class="clearfix"></div>		
+							</div>
+							<script>
+							var toggle = true;
+										
+							$(".sidebar-icon").click(function() {                
+							  if (toggle)
+							  {
+								$(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
+								$("#menu span").css({"position":"absolute"});
+							  }
+							  else
+							  {
+								$(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
+								setTimeout(function() {
+								  $("#menu span").css({"position":"relative"});
+								}, 400);
+							  }
+											
+											toggle = !toggle;
+										});
+							</script>
+<!--js -->
+<script src="js/jquery.nicescroll.js"></script>
+<script src="js/scripts.js"></script>
+<!-- Bootstrap Core JavaScript -->
+   <script src="js/bootstrap.min.js"></script>
+   <!-- /Bootstrap Core JavaScript -->	   
+   <!-- /Bootstrap Core JavaScript -->	   
+<script src="js/angular.min.js"></script>
+	  
+	  <!-- controller app -->
+	  	<script>
+function myFun() {
+    var x = document.getElementById("p2");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+		document.getElementById('p1').style.display = 'none';
+		document.getElementById('p3').style.display = 'none';
+		document.getElementById('p4').style.display = 'none';
+		document.getElementById('p5').style.display = 'none';
+		document.getElementById('p6').style.display = 'none';
+		document.getElementById('p7').style.display = 'none';
+		document.getElementById('table').style.display = 'none';
+
+
+    } else {
+        x.style.display = "none";
+		document.getElementById('p1').style.display = 'block';
+		document.getElementById('p3').style.display = 'none';
+		document.getElementById('p4').style.display = 'none';
+		document.getElementById('p5').style.display = 'none';
+		document.getElementById('p6').style.display = 'none';
+		document.getElementById('p7').style.display = 'none';
+		document.getElementById('table').style.display = 'none';
+	
+
+    }
+}
+
+function expenditure() {
+    var x = document.getElementById("p3");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+		document.getElementById('p1').style.display = 'none';
+		document.getElementById('p2').style.display = 'none';
+		document.getElementById('p4').style.display = 'none';
+		document.getElementById('p5').style.display = 'none';
+		document.getElementById('p6').style.display = 'none';
+		document.getElementById('p7').style.display = 'none';
+		document.getElementById('table').style.display = 'none';
+		
+
+
+    } else {
+        x.style.display = "none";
+		document.getElementById('p2').style.display = 'none';
+		document.getElementById('p1').style.display = 'block';
+		document.getElementById('p4').style.display = 'none';
+		document.getElementById('p5').style.display = 'none';
+		document.getElementById('p6').style.display = 'none';
+		document.getElementById('p7').style.display = 'none';
+		document.getElementById('table').style.display = 'none';
+		
+	
+
+    }
+}
+function home() {
+    var x = document.getElementById("p1");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+		document.getElementById('p3').style.display = 'none';
+		document.getElementById('p2').style.display = 'none';
+		document.getElementById('p5').style.display = 'none';
+		document.getElementById('p4').style.display = 'none';
+		document.getElementById('p6').style.display = 'none';
+		document.getElementById('p7').style.display = 'none';
+		document.getElementById('table').style.display = 'none';
+		
+
+
+    } else {
+       
+		document.getElementById('p3').style.display = 'none';
+		
+		document.getElementById('p2').style.display = 'none';
+		document.getElementById('p5').style.display = 'none';
+		document.getElementById('p4').style.display = 'none';
+		document.getElementById('p6').style.display = 'none';
+		document.getElementById('p7').style.display = 'none';
+		document.getElementById('table').style.display = 'none';
+		
+	
+
+    }
+}
+function loan() {
+    var x = document.getElementById("p4");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+		document.getElementById('p3').style.display = 'none';
+		document.getElementById('p2').style.display = 'none';
+		document.getElementById('p1').style.display = 'none';
+		document.getElementById('p5').style.display = 'none';
+		document.getElementById('p6').style.display = 'none';
+		document.getElementById('p7').style.display = 'none';
+		document.getElementById('table').style.display = 'none';
+
+
+    } else {
+        x.style.display = "none";
+		document.getElementById('p3').style.display = 'none';
+		document.getElementById('p1').style.display = 'block';
+		document.getElementById('p2').style.display = 'none';
+		document.getElementById('p5').style.display = 'none';
+		document.getElementById('p6').style.display = 'none';
+		document.getElementById('p7').style.display = 'none';
+		document.getElementById('table').style.display = 'none';
+	
+
+    }
+}
+
+function tamount() {
+    var x = document.getElementById("p5");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+		document.getElementById('p3').style.display = 'none';
+		document.getElementById('p2').style.display = 'none';
+		document.getElementById('p1').style.display = 'none';
+		document.getElementById('p4').style.display = 'none';
+		document.getElementById('p6').style.display = 'none';
+		document.getElementById('p7').style.display = 'none';
+		document.getElementById('table').style.display = 'none';
+
+
+    } else {
+        x.style.display = "none";
+		document.getElementById('p3').style.display = 'none';
+		document.getElementById('p1').style.display = 'block';
+		document.getElementById('p2').style.display = 'none';
+		document.getElementById('p4').style.display = 'none';
+		document.getElementById('p6').style.display = 'none';
+		document.getElementById('p7').style.display = 'none';
+		document.getElementById('table').style.display = 'none';
+		
+	
+
+    }
+}
+function customerlist() {
+    var x = document.getElementById("p6");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+		document.getElementById('p3').style.display = 'none';
+		document.getElementById('p2').style.display = 'none';
+		document.getElementById('p1').style.display = 'none';
+		document.getElementById('p4').style.display = 'none';
+		document.getElementById('p5').style.display = 'none';
+		document.getElementById('p7').style.display = 'none';
+		document.getElementById('table').style.display = 'none';
+
+
+    } else {
+        x.style.display = "none";
+		document.getElementById('p3').style.display = 'none';
+		document.getElementById('p1').style.display = 'block';
+		document.getElementById('p2').style.display = 'none';
+		document.getElementById('p4').style.display = 'none';
+		document.getElementById('p5').style.display = 'none';
+		document.getElementById('p7').style.display = 'none';
+		document.getElementById('table').style.display = 'none';
+	
+
+    }
+}
+function report() {
+    var x = document.getElementById("p7");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+		document.getElementById('p3').style.display = 'none';
+		document.getElementById('p2').style.display = 'none';
+		document.getElementById('p1').style.display = 'none';
+		document.getElementById('p4').style.display = 'none';
+		document.getElementById('p5').style.display = 'none';
+		document.getElementById('p6').style.display = 'none';
+		document.getElementById('table').style.display = 'none';
+    } else {
+        x.style.display = "none";
+		document.getElementById('p3').style.display = 'none';
+		document.getElementById('p1').style.display = 'block';
+		document.getElementById('p2').style.display = 'none';
+		document.getElementById('p4').style.display = 'none';
+		document.getElementById('p5').style.display = 'none';
+		document.getElementById('p6').style.display = 'none';
+		document.getElementById('table').style.display = 'none';
+	
+
+    }
+}
+</script>
+	<script>
+function myFunction() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+		document.getElementById('lent').style.display = 'none';
+		document.getElementById('rec').style.display = 'none';
+		document.getElementById('invest').style.display = 'none';
+		document.getElementById('mydiv').style.display = 'none';
+		document.getElementById('all').style.display = 'none';
+		document.getElementById('sort').style.display = 'none';
+		
+    } else {
+        x.style.display = "none";
+		document.getElementById('lent').style.display = 'none';
+		document.getElementById('rec').style.display = 'none';
+		document.getElementById('invest').style.display = 'none';
+		document.getElementById('mydiv').style.display = 'none';
+		document.getElementById('all').style.display = 'none';
+		document.getElementById('sort').style.display = 'none';
+    }
+}
+</script>
+	<script>
+function myFuntable() {
+    var x = document.getElementById("mydiv");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+		document.getElementById('lent').style.display = 'none';
+		document.getElementById('rec').style.display = 'none';
+		document.getElementById('invest').style.display = 'none';
+		document.getElementById('all').style.display = 'none';
+		document.getElementById('sort').style.display = 'none';
+
+
+    } else {
+        x.style.display = "none";
+		document.getElementById('lent').style.display = 'none';
+		document.getElementById('rec').style.display = 'none';
+		document.getElementById('invest').style.display = 'none';
+		document.getElementById('all').style.display = 'none';
+		document.getElementById('sort').style.display = 'none';
+	
+
+    }
+}
+</script>
+<script>
+function mylent() {
+    var x = document.getElementById("lent");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+		document.getElementById('mydiv').style.display = 'none';
+		document.getElementById('rec').style.display = 'none';
+		document.getElementById('invest').style.display = 'none';
+		document.getElementById('all').style.display = 'none';
+		document.getElementById('sort').style.display = 'none';
+	
+
+
+    } else {
+        x.style.display = "none";
+		document.getElementById('mydiv').style.display = 'none';
+		document.getElementById('rec').style.display = 'none';
+		document.getElementById('invest').style.display = 'none';
+		document.getElementById('all').style.display = 'none';
+		document.getElementById('sort').style.display = 'none';
+		
+
+    }
+}
+</script>
+<script>
+function myInve() {
+    var x = document.getElementById("invest");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+		document.getElementById('mydiv').style.display = 'none';
+		document.getElementById('rec').style.display = 'none';
+		document.getElementById('lent').style.display = 'none';
+		document.getElementById('all').style.display = 'none';
+		document.getElementById('sort').style.display = 'none';
+
+
+
+    } else {
+        x.style.display = "none";
+		document.getElementById('mydiv').style.display = 'none';
+		document.getElementById('rec').style.display = 'none';
+		document.getElementById('lent').style.display = 'none';
+		document.getElementById('all').style.display = 'none';
+		document.getElementById('sort').style.display = 'none';
+
+
+    }
+}
+</script>
+<script>
+function myrec() {
+    var x = document.getElementById("rec");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+		document.getElementById('mydiv').style.display = 'none';
+		document.getElementById('lent').style.display = 'none';
+		document.getElementById('invest').style.display = 'none';
+		document.getElementById('all').style.display = 'none';
+		document.getElementById('sort').style.display = 'none';
+		
+
+    } else {
+        x.style.display = "none";
+		document.getElementById('mydiv').style.display = 'none';
+		document.getElementById('lent').style.display = 'none';
+		document.getElementById('invest').style.display = 'none';
+		document.getElementById('all').style.display = 'none';
+		document.getElementById('sort').style.display = 'none';
+	
+	
+
+    }
+}
+</script>
+<script>
+function myall() {
+    var x = document.getElementById("all");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+		document.getElementById('mydiv').style.display = 'none';
+		document.getElementById('lent').style.display = 'none';
+		document.getElementById('invest').style.display = 'none';
+		document.getElementById('rec').style.display = 'none';
+		document.getElementById('sort').style.display = 'none';
+
+    } else {
+        x.style.display = "none";
+		document.getElementById('mydiv').style.display = 'none';
+		document.getElementById('lent').style.display = 'none';
+		document.getElementById('invest').style.display = 'none';
+		document.getElementById('rec').style.display = 'none';
+		document.getElementById('sort').style.display = 'none';
+
+    }
+}
+</script>
+<script>
+function datesort() {
+    var x = document.getElementById("sort");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+		document.getElementById('mydiv').style.display = 'none';
+		document.getElementById('lent').style.display = 'none';
+		document.getElementById('invest').style.display = 'none';
+		document.getElementById('rec').style.display = 'none';
+		document.getElementById('all').style.display = 'none';
+
+    } else {
+        x.style.display = "none";
+		document.getElementById('mydiv').style.display = 'none';
+		document.getElementById('lent').style.display = 'none';
+		document.getElementById('invest').style.display = 'none';
+		document.getElementById('rec').style.display = 'none';
+		document.getElementById('all').style.display = 'none';
+
+    }
+}
+</script>
+	<script>
+function table() {
+    var x = document.getElementById("table");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+		document.getElementById('lent').style.display = 'none';
+		document.getElementById('rec').style.display = 'none';
+		document.getElementById('invest').style.display = 'none';
+		document.getElementById('mydiv').style.display = 'none';
+		document.getElementById('salary').style.display = 'none';
+	
+		
+    } else {
+        x.style.display = "none";
+		document.getElementById('lent').style.display = 'none';
+		document.getElementById('rec').style.display = 'none';
+		document.getElementById('invest').style.display = 'none';
+		document.getElementById('mydiv').style.display = 'none';
+		document.getElementById('salary').style.display = 'none';
+		
+    }
+}
+</script>
+	<script>
+function roomrent() {
+    var x = document.getElementById("roomrent");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+		document.getElementById('mobile').style.display = 'none';
+		document.getElementById('others').style.display = 'none';
+		document.getElementById('lightbill').style.display = 'none';
+		document.getElementById('fuel').style.display = 'none';
+		document.getElementById('salary').style.display = 'none';
+		
+		
+    } else {
+	   x.style.display = "block";
+     	document.getElementById('mobile').style.display = 'none';
+		document.getElementById('others').style.display = 'none';
+		document.getElementById('lightbill').style.display = 'none';
+		document.getElementById('fuel').style.display = 'none';
+		document.getElementById('salary').style.display = 'none';
+
+    }
+}
+</script>
+	<script>
+function mobile() {
+    var x = document.getElementById("mobile");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+		document.getElementById('roomrent').style.display = 'none';
+		document.getElementById('others').style.display = 'none';
+		document.getElementById('lightbill').style.display = 'none';
+		document.getElementById('fuel').style.display = 'none';
+		document.getElementById('salary').style.display = 'none';
+		
+    } else {
+        x.style.display = "none";
+		document.getElementById('roomrent').style.display = 'none';
+		document.getElementById('others').style.display = 'none';
+		document.getElementById('lightbill').style.display = 'none';
+		document.getElementById('fuel').style.display = 'none';
+		document.getElementById('salary').style.display = 'none';
+		
+    }
+}
+</script>
+	<script>
+function fuel() {
+    var x = document.getElementById("fuel");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+		document.getElementById('mobile').style.display = 'none';
+		document.getElementById('others').style.display = 'none';
+		document.getElementById('roomrent').style.display = 'none';
+		document.getElementById('lightbill').style.display = 'none';
+		document.getElementById('salary').style.display = 'none';
+		
+    } else {
+        x.style.display = "none";
+		document.getElementById('mobile').style.display = 'none';
+		document.getElementById('others').style.display = 'none';
+		document.getElementById('roomrent').style.display = 'none';
+		document.getElementById('lightbill').style.display = 'none';
+		document.getElementById('salary').style.display = 'none';
+    }
+}
+</script>
+	<script>
+function lightbill() {
+    var x = document.getElementById("lightbill");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+		document.getElementById('mobile').style.display = 'none';
+		document.getElementById('others').style.display = 'none';
+		document.getElementById('roomrent').style.display = 'none';
+		document.getElementById('fuel').style.display = 'none';
+		document.getElementById('salary').style.display = 'none';
+		
+    } else {
+        x.style.display = "none";
+		document.getElementById('mobile').style.display = 'none';
+		document.getElementById('others').style.display = 'none';
+		document.getElementById('roomrent').style.display = 'none';
+		document.getElementById('fuel').style.display = 'none';
+		document.getElementById('salary').style.display = 'none';
+    }
+}
+</script>
+	<script>
+function salary() {
+    var x = document.getElementById("salary");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+		document.getElementById('mobile').style.display = 'none';
+		document.getElementById('others').style.display = 'none';
+		document.getElementById('roomrent').style.display = 'none';
+		document.getElementById('lightbill').style.display = 'none';
+		document.getElementById('fuel').style.display = 'none';
+
+    } else {
+        x.style.display = "none";
+		document.getElementById('mobile').style.display = 'none';
+		document.getElementById('others').style.display = 'none';
+		document.getElementById('roomrent').style.display = 'none';
+		document.getElementById('lightbill').style.display = 'none';
+		document.getElementById('fuel').style.display = 'none';
+		
+    }
+}
+</script>
+	<script>
+function others() {
+    var x = document.getElementById("others");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+		document.getElementById('mobile').style.display = 'none';
+		document.getElementById('roomrent').style.display = 'none';
+		document.getElementById('lightbill').style.display = 'none';
+		document.getElementById('fuel').style.display = 'none';
+		document.getElementById('salary').style.display = 'none';
+		
+    } else {
+        x.style.display = "none";
+		document.getElementById('mobile').style.display = 'none';
+		document.getElementById('roomrent').style.display = 'none';
+		document.getElementById('lightbill').style.display = 'none';
+		document.getElementById('fuel').style.display = 'none';
+		document.getElementById('salary').style.display = 'none';
+    }
+}
+</script>
+
+<script>
+var app = angular.module('app', ['easypiechart']);
+app.controller('chartCtrl', function ($scope,  $http, $window, $timeout) {
+ $scope.percent = 0;
+        $scope.options = {
+                 animate:{
+                duration:0,
+                enabled:false
+            },
+            barColor:'#2C3E50',
+			trackColor: '#99FFFF',
+            scaleColor:false,
+            lineWidth:20,
+            lineCap:'circle'
+        };
+			
+        $timeout(function loop() {
+          $timeout(loop, 100);
+        	//	$scope.percent = ($scope.notification.TAmount/$scope.notification.LAmount)*100;
+		$scope.percent;
+          console.log($scope.percent, $scope);
+        }, 100);
+		
+$http.get('http://localhost:3009/api/books1/', {
+						 						 
+					}).then(function (response) {
+					
+						$scope.pie= response.data.report;
+						//var jsonCars = JSON.stringify(cars);
+		
+
+	
+});
+$scope.table = function(){
+       var host = $window.location.host;
+        var landingUrl = "http://" + host + "/table";
+        //alert(landingUrl);
+        $window.location.href = landingUrl;
+						
+  };
+  $http.get('/newuser', {
+						 						 
+					}).then(function (response) {
+						$scope.newuser= response.data.report;
+						});
+$http.get('/notification', {
+						 						 
+					}).then(function (response) {
+						$scope.notification= response.data.report;
+						//var jsonCars = JSON.stringify(cars);
+						});
+
+				
+
+	 $scope.updatenote = function () {
+        
+        $scope.loader.loading = true;
+        
+        $http.get('/updatenote')
+            .then(function (response) {
+              
+					$scope.update = response.data.report;
+				
+            })
+            
+    };
+	
+        
+     
+        
+        $http.get('http://localhost:3009/api/roomrent')
+                           .then(function (response) {
+              
+					$scope.Room_Rent = response.data.Room_Rent;
+				
+            })
+  
+
+        
+        $http.get('http://localhost:3009/api/mobile_bill')
+            .then(function (response) {
+              
+					$scope.mobile_bill = response.data.mobile_bill;
+				
+            })
+            
+  
+	
+        $http.get('http://localhost:3009/api/light_bill')
+            .then(function (response) {
+              
+					$scope.light_bill = response.data.light_bill;
+				
+            })
+   
+	
+        $http.get('http://localhost:3009/api/payment')
+            .then(function (response) {
+              
+					$scope.payment = response.data.payment;
+				
+            })
+            
+   
+        
+        $http.get('http://localhost:3009/api/petrol')
+            .then(function (response) {
+              
+					$scope.Petrol = response.data.Petrol;
+				
+            })
+    
+
+        
+      
+        
+        $http.get('http://localhost:3009/api/others')
+            .then(function (response) {
+              
+					$scope.Others = response.data.Others;
+				
+            })
+            
+   
+	
+//http://localhost:3009/updatenote
+	
+	$scope.logout = function(){
+       var host = $window.location.host;
+        var landingUrl = "http://" + host + "/";
+        //alert(landingUrl);
+        $window.location.href = landingUrl;
+						
+  };
+});						
+</script>
+</body>
+</html>

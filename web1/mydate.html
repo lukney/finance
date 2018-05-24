@@ -1,0 +1,125 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body ng-app="my-app" ng-controller="my-controller">
+  <h1>Empty Angular App</h1>
+  <span>{{"2018-04-27T18:30:00.000Z" | date:'medium' }}</span><br>
+  <span>newuser{{mydate1}}</span><br>
+  <table>
+  <tr ng-repeat="my inmydate1">{{my.mydate | date:'medium'}}</tr>
+  </table>
+  <span>Expected: Aug 23, 2015 10:10:10 PM</span>
+  <input type="date" ng-model="mydates">
+  <input type="date" value="date" ng-model="date">
+  <select ng-model="type">
+  <option value="">select type</option>
+  <option value="week">week</option>
+  <option value="month">month</option>
+  </select>
+  <button type="button" ng-click="days()">mydate</button>
+
+</body>
+  <script>
+var app = angular.module('my-app', []);
+
+app.controller("my-controller", function ($scope, $http, $window) {
+  $scope.name = "world";
+  //$scope.mydate = new Date("2015-07-08T15:10:10.530Z");
+  $scope.days= function(){
+  var mydates = $scope.mydates;
+   var date = $scope.date;
+  //no of days diffrence
+  var type = $scope.type;
+  var week;
+  var month;var n;
+    var date1 = new Date(mydates);
+	var date2 = new Date(date);
+	
+    var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+var dayDifference = Math.ceil(timeDiff / (1000 * 3600 * 24));
+console.log( dayDifference);
+  
+  if(type == 'week'){
+n = parseInt(dayDifference/7);
+$scope.installement = n;
+console.log(Math.ceil(n));
+var mydate = [];
+
+//$scope.mydate = [];
+//alldates.push(new Date(date1));
+	for(var i=0; i<n;i++){
+mydates.setDate(mydates.getDate() + parseInt(7)); 
+    var dd = mydates.getDate();  
+    var mm = mydates.getMonth() + 1;
+    var y = mydates.getFullYear();
+	var mydatess = mm + '/' + dd + '/' + y;
+ mydate.push(mydatess);
+//console.log(mydate.push(new Date(mydates)));
+}
+ $http.post('http://localhost:3000/api/date', {
+            'mydate' : JSON.stringify(mydate)
+            
+        })
+		 .then(function (response) {
+              
+					$scope.newdate = response.data.mydate;
+				
+            })
+ }else    if(type == 'month'){
+n = parseInt(dayDifference/30);
+$scope.installement = n;
+console.log(Math.ceil(n));
+var mydate = [];
+
+//$scope.mydate = [];
+//alldates.push(new Date(date1));
+	for(var i=0; i<n;i++){
+mydates.setDate(mydates.getDate() + parseInt(30)); 
+    var dd = mydates.getDate();  
+    var mm = mydates.getMonth() + 1;
+    var y = mydates.getFullYear();
+	var mydatess = mm + '/' + dd + '/' + y;
+ mydate.push(mydatess);
+//console.log(mydate.push(new Date(mydates)));
+}
+ $http.post('http://localhost:3000/api/date', {
+            'mydate' : JSON.stringify(mydate)
+            
+        })
+		 .then(function (response) {
+              
+					$scope.newdate = response.data.mydate;
+				
+            })
+ }
+ 
+ 
+ 
+ 
+ 
+  //console.log(mydates);
+ /* var numberOfDaysToAdd = 7;
+ mydates.setDate(mydates.getDate() + parseInt(numberOfDaysToAdd)); 
+    var dd = mydates.getDate();
+    var mm = mydates.getMonth() + 1;
+    var y = mydates.getFullYear();
+	$scope.mydate = mm + '/' + dd + '/' + y;*/
+  //console.log(mydate);
+ //console.log($scope.newdate);
+   
+			$http.get('http://localhost:3000/api/mydate1/', {
+						 						 
+					}).then(function (response) {
+					
+						$scope.mydate1= response.data.mydate;
+						//var jsonCars = JSON.stringify(cars);
+		
+
+	
+});
+ 
+  
+  }
+});
+
+</script>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Charts Example with Dynamica Data</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+</head>
+<body>
+    <div id="b_sale" style="width:500px; height:300px;"></div>
+</body>
+<script>
+    // VISUALIZATION API AND THE PIE CHART PACKAGE.
+    google.load("visualization", "1", { packages: ["corechart"] });
+    google.setOnLoadCallback(createPIE);
+
+    function createPIE() {
+        // SET CHART OPTIONS.
+        var options = {
+            title: 'Monthly sale of Books',
+            colors: ['green', 'orange', 'blue'],
+            is3D: true
+        };
+
+      /*  $.ajax({
+            url: "http://localhost:3000/api/books/",
+            dataType: "json",
+            type: "GET",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                var arrValues = [['Month', 'Sales Figure']];        // DEFINE AN ARRAY.
+                var iCnt = 0;
+
+                $.each(data.d, function () {
+                    // POPULATE ARRAY WITH THE EXTRACTED DATA.
+                    arrValues.push([data.d[iCnt].Month, data.d[iCnt].SalesFigure]);
+                    iCnt += 1;
+                });
+
+                // CREATE A DataTable AND ADD THE ARRAY (WITH DATA) IN IT.
+                var figures = google.visualization.arrayToDataTable(arrValues)
+
+                // THE TYPE OF CHART (PieChart IN THIS EXAMPLE).
+                var chart = new google.visualization.PieChart(document.getElementById('b_sale'));
+
+                chart.draw(figures, options);      // DRAW GRAPH WITH THE DATA AND OPTIONS.
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert('Got an Error');
+            }
+        });*/
+   $.ajax({
+            url: 'http://localhost:3000/api/books/',
+            dataType: "json",
+            type: "GET",
+            success: function (data) {
+
+                var arrValues = [['Month', 'total_amount', 'Sales Figure', 'total_amount']];        // DEFINE AN ARRAY.
+                var iCnt = 0;
+
+                $.map(data, function () {
+                    arrValues.push([data[iCnt].Month,data[iCnt].name, data[iCnt].SalesFigure, data[iCnt].total_amount]);
+                    iCnt += 1;
+                });
+
+                // CREATE A DataTable AND ADD THE ARRAY (WITH DATA) IN IT.
+                var figures = google.visualization.arrayToDataTable(arrValues)
+
+                // THE TYPE OF CHART. IT’S A PIE CHART, HOWEVER THE “pieHole” OPTION 
+                    // (SEE “var options” ABOVE) WILL ADD A SPACE AT THE CENTER FOR DONUT.
+                var chart = new google.visualization.PieChart(document.getElementById('b_sale'));
+
+                chart.draw(figures, options);      // DRAW GRAPH WITH THE DATA AND OPTIONS.
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert('There was an Error');
+            }
+        });
+		}
+</script>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drawing Charts in AngularJS</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.1.1/Chart.min.js"></script>
+    <script src="angular-chart.js"></script>
+</head>
+<body>
+    <div ng-app="myChart" 
+        ng-controller="myController" style="width:700px;">
+
+        <p><button ng-click="requestData()">Show Chart</button></p>
+
+        <canvas id="bar" 
+            class="chart chart-bar" 
+            data="data"
+            labels="labels"
+            colours="colors">
+        </canvas>
+    </div>
+</body>
+<script>
+    var myApp = angular.module('myChart', ["chart.js"]);
+
+    myApp.controller(
+        'myController',
+            function ($scope, $http) {
+
+                $scope.requestData = function () {
+                    var arrData = new Array();
+                    var arrLabels = new Array();
+
+                    $http.get("http://localhost:3000/api/books/").success(function (data) {
+
+                        $.map(data, function (item) {
+                            arrData.push(item.SalesFigure);
+                            arrLabels.push(item.Month.split(','));
+                        });
+
+                        $scope.data = [];
+                        $scope.labels = [];
+
+                        $scope.data.push(arrData.slice(0));
+
+                        for (var i = 0; i < arrLabels.length; i++) {
+                            $scope.labels.push(arrLabels[i]);
+                        }
+                    }).error(function (status) {
+                        alert(status);
+                    });
+                };
+
+                // NOW, ADD COLOURS TO THE BARS.
+                $scope.colors = [
+                    {
+                        fillColor: 'rgba(161, 75, 201, 0.8)',
+                        strokeColor: 'rgba(161, 75, 201, 0.8)',
+                        highlightFill: 'rgba(161, 75, 201, 0.8)',
+                        highlightStroke: 'rgba(161, 75, 201, 0.8)'
+                    }
+                ];
+            });
+</script>
+</html>

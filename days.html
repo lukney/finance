@@ -1,0 +1,271 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body ng-app="myApp">
+  <section>
+    <div ng-controller="customersCtrl">
+      <span style="color:red">Day Count From 2017/02/03 to Today's Date is:</span>
+      <span style="color:green">{{days('2017/04/19')}}</span>
+      <br>
+     <span style="color:green">Today's Date is : {{ today }}</span>
+	 <span>number of days:{{dayDifference}}</span>
+<input type="date" value="date" ng-model="date">
+<button type="button" ng-click="days()">days</button>
+	 
+    </div>
+  </section>
+  <script>
+  var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $http, $filter) {
+  $scope.days = function(date) {
+    var today = new Date();
+	var date = $scope.date;
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1; //January is 0!
+    var yyyy = today.getFullYear();
+    if (dd < 10) {
+      dd = '0' + dd
+    }
+    if (mm < 10) {
+      mm = '0' + mm
+    }
+    today = yyyy + '/' + mm + '/' + dd;
+    $scope.today = today;
+    var date2 = new Date(today);
+    var date1 = new Date(date);
+    var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+    $scope.dayDifference = Math.ceil(timeDiff / (1000 * 3600 * 24));
+    return $scope.dayDifference;
+  }
+});
+  </script>
+  <SCRIPT language=JavaScript>
+<!-- 
+
+function Initialize() {
+  SetToday(document.ThisForm);
+}
+
+function SetToday(form) {
+  var now = new Date();
+  var day = now.getDate();
+  var month = now.getMonth()+1;
+  var year = now.getFullYear();
+  form.MonthList.selectedIndex = month-1;
+  form.DayList.selectedIndex = day-1;
+  form.YearBox.value = " " + year;
+  form.ADBC.selectedIndex = 0;
+}
+
+function compute(form) {
+	var y2 = parseFloat(stripBad(form.YearBox.value))
+	var y3a = y2 
+	if ((form.YearBox.value == "")||(y2 < 1)) {
+    alert("Enter a positive number for [Year],\n\n then select A.D. or B.C.\n\n(There was no year 0.)\n\nDo not leave the Year blank.")
+	}
+	var adday3 = parseFloat(stripBad(form.delta.value))
+	if (form.delta.value == "") {
+    alert("Enter number of days to add or\n\n subtract to the selected date. ")
+	}
+
+  var nday = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+	nday[1] = (0 == y2 % 4) && (0 != y2 % 100) || (0 == y2 % 400) ? 29 : 28;
+
+	
+var xas = parseFloat(form.DayList.selectedIndex) + 1
+var xas2 =parseFloat(form.MonthList.selectedIndex)
+
+	if (xas > nday[xas2]) {
+   alert("Not a day. Check the Month and Day you selected") }
+    var rjd = 0
+   var m2 = parseFloat(form.MonthList.selectedIndex) + 1
+   var d2 = parseFloat(form.DayList.selectedIndex) + 1
+   var er3 = parseFloat(form.ADBC.selectedIndex)
+
+    if( er3 == 1 ) {y2 = -y2 + 1;}
+
+	rjd = cal_to_jd( y2, m2, d2 )
+	rjd = rjd + adday3;
+
+
+	result=jd_to_cal(rjd)
+
+
+  var nday = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+  if (1 == (m2-1)) {
+	nday[1] = (0 == y2 % 4) && (0 != y2 % 100) || (0 == y2 % 400) ? 29 : 28;
+	}
+  if ((1 == (m2-1)) && (y3a == 1) && (er3 == 1)) {
+		nday[1] = 28; }
+
+	if (d2 > nday[m2-1]) {
+   form.txtResult.value = "Not a day. Check the day you selected"}
+
+	else if (form.delta.value == "") {
+	   form.txtResult.value=" "}
+	else if (result[0] == undefined) {
+	   form.txtResult.value="Not a day. Check the day or # of days selected" }
+	else if ((form.YearBox.value == "")||(y3a < 1)) {
+	   form.txtResult.value="Not a day. Check the year entered" }
+	else {
+   form.txtResult.value =  "  " + result[0] + ",  " + result[1] + "  " + result[2] + ",  " + result[3] + "  " }
+
+
+function stripBad(string) {
+    for (var i=0, output='', valid="eE-0123456789."; i<string.length; i++)
+       if (valid.indexOf(string.charAt(i)) != -1)
+          output += string.charAt(i)
+    return output;
+} 
+
+function cal_to_jd(  y2, m2, d2  ) {
+   var j1=0;
+   var jy=0;
+   var ja=0;
+   var jm=0;
+	if( m2 > 2 ) {
+		jy = y2;
+		jm = m2 + 1;
+	} else {
+		jy = y2 - 1;
+		jm = m2 + 13;
+	}
+
+
+	var intgr = Math.floor( Math.floor(365.25*jy) + Math.floor(30.6001*jm) + d2 + 1720995 );
+	var intgr2 = intgr;
+
+    var gregcal = 15 + 31*( 10 + 12*1582 );
+	if( d2 + 31*(m2 + 12*y2) >= gregcal ) {
+		ja = Math.floor(0.01*jy);
+		intgr2 += 2 - ja + Math.floor(0.25*ja);
+	}
+
+	rjd = intgr2;
+    return rjd;
+	}
+
+function jd_to_cal(rjd) {
+mowstr = new Object;
+mowstr[0]="January";
+mowstr[1]="February";
+mowstr[2]="March";
+mowstr[3]="April";
+mowstr[4]="May";
+mowstr[5]="June";
+mowstr[6]="July";
+mowstr[7]="August";
+mowstr[8]="September";
+mowstr[9]="October";
+mowstr[10]="November";
+mowstr[11]="December";
+
+	var aday1 = Math.round(rjd%7)
+
+daysz = new Object;
+daysz[5] = "Saturday"
+daysz[6] = "Sunday"
+daysz[0] = "Monday"
+daysz[1] = "Tuesday"
+daysz[2] = "Wednesday"
+daysz[3] = "Thursday"
+daysz[4] = "Friday"
+
+   var jd = rjd;
+   var intgr = rjd;
+   var gregjd  = 2299161;
+	if( intgr >= gregjd ) {	
+		var tmp = Math.floor( ( (intgr - 1867216) - 0.25 ) / 36524.25 );
+		j1 = intgr + 1 + tmp - Math.floor(0.25*tmp);
+	} 
+		else {
+		j1 = intgr;}
+
+	var j2 = j1 + 1524;
+	var j3 = Math.floor( 6680.0 + ( (j2 - 2439870) - 122.1 )/365.25 );
+	var j4 = Math.floor(j3*365.25);
+	var j5 = Math.floor( (j2 - j4)/30.6001 );
+
+	var d = Math.floor(j2 - j4 - Math.floor(j5*30.6001));
+	var m = Math.floor(j5 - 1);
+	if( m > 12 ) m -= 12;
+	var y = Math.floor(j3 - 4715);
+	if( m > 2 )   --y;
+	if( y <= 0 )  --y;
+
+
+
+
+	var result=new Array;
+	result[0] = daysz[aday1]
+	result[1] = mowstr[m-1]
+	result[2] = d
+	result[3] = y
+	
+
+	for (var i = 0; i < 4; i++) {
+		   return result; } 
+
+	}
+}
+
+  -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFAF0" TEXT=#000000 LINK="Blue" VLINK="#0000A0" ALINK="Blue" onload=Initialize()>
+
+
+
+
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=5 width=350 border=0>
+  <TBODY>
+  <FORM name=ThisForm>
+
+	<TR><TD>&nbsp;<B>From:</B>&nbsp;</TD>
+	<TD>&nbsp;Month</TD><TD>&nbsp;Day</TD>
+	<TD>&nbsp;Year</TD>
+	
+	</TR>
+	<TR><TD>&nbsp;&nbsp;</TD><TD><SELECT compute(document.ThisForm) class=debu3 name=MonthList> 
+<OPTION selected>January
+<OPTION>February
+<OPTION>March
+<OPTION>April
+<OPTION>May
+<OPTION>June
+<OPTION>July
+<OPTION>August
+<OPTION>September
+<OPTION>October
+<OPTION>November
+<OPTION>December</OPTION></SELECT></TD>
+<TD><SELECT compute(document.ThisForm) class=debu3 name=DayList>
+<OPTION selected>&nbsp;&nbsp;1<OPTION>&nbsp;&nbsp;2<OPTION>&nbsp;&nbsp;3<OPTION>&nbsp;&nbsp;4<OPTION>&nbsp;&nbsp;5<OPTION>&nbsp;&nbsp;6<OPTION>&nbsp;&nbsp;7<OPTION>&nbsp;&nbsp;8<OPTION>&nbsp;&nbsp;9<OPTION>10
+<OPTION>11<OPTION>12<OPTION>13<OPTION>14<OPTION>15<OPTION>16<OPTION>17<OPTION>18<OPTION>19<OPTION>20<OPTION>
+21<OPTION>22<OPTION>23<OPTION>24<OPTION>25<OPTION>26<OPTION>27<OPTION>28<OPTION>29<OPTION>30<OPTION>
+31</OPTION></SELECT>
+</TD>
+	<TD><INPUT compute(document.ThisForm) size=4 class=debu3 name=YearBox></TD>
+	<TD><SELECT compute(document.ThisForm) class=debu3 name=ADBC> 
+		</TD>
+		</TR>
+</TBODY></TABLE>
+
+<TABLE><TBODY>
+	<TR><TD ALIGN=center><BR>Enter number of days to add or subtract (-) to the above date<BR><BR></TD></TR>
+
+      <TR><TD ALIGN=center>
+	<INPUT class=debu3 size=10 value="10" name=delta > days 
+      </TD></TR></TBODY></TABLE><BR>
+
+
+<TABLE><TBODY><TR>
+    <TD align=middle><INPUT onclick=compute(this.form) type=button value="Click to Calculate" class="b2t"> 
+    </TD>  <TD><INPUT TYPE="text" NAME="txtResult" class=debu3 SIZE=40> </TD></TR>
+
+</TBODY></TABLE></FORM></CENTER>
+
+  </body>
+</html>

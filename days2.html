@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body ng-app="myApp">
+  <section>
+    <div ng-controller="customersCtrl">
+      <span style="color:red">Day Count From 2017/02/03 to Today's Date is:</span>
+      <span style="color:green">{{days('2017/04/19')}}</span>
+      <br><h2>no of installement:{{installement}}</h2>
+     <span style="color:green">Installment Date : {{ someFormattedDate }}</span>
+	
+	 <span>number of days:{{dayDifference}}</span>
+<input type="date" value="date" ng-model="date">
+<input type="date" value="date" ng-model="mydate">
+<select ng-model="type">
+<option value="week">week</option>
+<option value="month">month</option>
+</select>
+
+	
+<button type="button" ng-click="days()">days</button>	 
+    </div>
+  </section>
+  <script>
+  var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $http, $filter) {
+  $scope.days = function(date,mydate) {
+    var date = $scope.date;
+	var mydate = $scope.mydate;
+  var type = $scope.type;
+var week =  $scope.week;
+ var month = $scope.month;
+ 
+ // console.log(type);
+  /*if(angular.equals($scope.type.value, $scope.week)){
+    
+    var result1 = angular.equals($scope.type.value, $scope.week);
+    console.log(result1);
+  }elseif(angular.equals($scope.type.value,  $scope.month)){
+   var result2 = angular.equals($scope.type.value,  $scope.month);
+ console.log(result2);
+  
+  }*/
+ 
+
+    var date1 = new Date(date);
+	var date2 = new Date(mydate);
+	 var date3 = new Date(date1);
+    var timeDiff = Math.abs(date2.getTime() - date3.getTime());
+var dayDifference = Math.ceil(timeDiff / (1000 * 3600 * 24));
+console.log( dayDifference);
+var n dayDifference/7; 
+
+for(i=1;i<n; i++){
+date3.setDate(date3.getDate() + 7);
+    //date1.setDate(date1.getDate() + 7);
+    var dd = date3.getDate();
+    var mm = date3.getMonth() + 1;
+    var yyyy = date3.getFullYear();
+  var date3 = mm + '/' + dd + '/' + y;
+array.push(date3);
+
+}
+console.log(array[0]);
+}
+
+ 
+});
+  </script>
+  </body>
+</html>

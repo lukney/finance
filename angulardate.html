@@ -1,0 +1,41 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body ng-app="myApp">
+  <section>
+    <div ng-controller="customersCtrl">
+      <span style="color:red">Day Count From 2017/02/03 to Today's Date is:</span>
+      <span style="color:green">{{days('2017/04/19')}}</span>
+      <br>
+     <span style="color:green">Today's Date is : {{ today }}</span>
+	 <span>number of days:{{dayDifference}}</span>
+<input type="date" value="date" ng-model="date">
+<button type="button" ng-click="days()">days</button>	 
+    </div>
+  </section>
+  <script>
+  var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $http, $filter) {
+  $scope.days = function(date) {
+    var today = new Date();
+	var date = $scope.date;
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1; //January is 0!
+    var yyyy = today.getFullYear();
+    if (dd < 10) {
+      dd = '0' + dd
+    }
+    if (mm < 10) {
+      mm = '0' + mm
+    }
+    today = yyyy + '/' + mm + '/' + dd;
+    $scope.today = today;
+    var date2 = new Date(today);
+    var date1 = new Date(date);
+    var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+    $scope.dayDifference = Math.ceil(timeDiff / (1000 * 3600 * 24));
+    return $scope.dayDifference;
+  }
+});
+  </script>
+  </body>
+</html>
